@@ -1,0 +1,12 @@
+image: python:3.9
+
+test_code:
+    script:
+      - echo "installing necessary depedencies"
+      - pip install -r $CI_PROJECT_DIR/requirements.txt
+      - pytest test.py
+
+build_image:
+    script:
+      - echo "building docker image"
+      - docker build -t data_validator:v1 .
