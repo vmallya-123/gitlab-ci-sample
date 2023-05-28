@@ -9,4 +9,5 @@ test_code:
 build_image:
     script:
       - echo "building docker image"
-      - docker build -t data_validator:v1 .
+      - cd $CI_PROJECT_DIR
+      - docker build -t data_validator:v1 . 
